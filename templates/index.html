@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HIV Antiviral Resistance Scanner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+</head>
+<body>
+
+<header class="lab-header">
+  <h1>HIV Antiviral Resistance Scanner</h1>
+  <p>Sequence-based drug resistance interpretation using the Stanford HIVdb Sierra algorithm</p>
+</header>
+
+<main class="container">
+
+  <section>
+    <p class="section-label">PATIENT INFORMATION</p>
+    <div class="grid-3">
+      <div>
+        <label>Patient name</label>
+        <input type="text" id="patientName">
+        <label>Patient ID / MRN</label>
+        <input type="text" id="patientId">
+      </div>
+      <div>
+        <label>Age</label>
+        <input type="number" id="patientAge" value="30">
+        <label>Sex</label>
+        <select id="patientSex">
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label>Sample collection date</label>
+        <input type="date" id="sampleDate">
+        <label>Referring clinician</label>
+        <input type="text" id="clinicianName">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">SEQUENCE INPUT</p>
+    <textarea id="seqInput" rows="8" placeholder="Paste FASTA or raw nucleotide sequence"></textarea>
+    <br>
+    <button id="sampleBtn" class="btn-secondary">Use sample sequence</button>
+    <button id="analyzeBtn" class="btn-primary">Analyze</button>
+  </section>
+
+  <div id="results" style="display:none;">
+
+    <div class="patient-banner" id="patientBanner"></div>
+
+    <section>
+      <p class="section-label">MUTATIONS DETECTED</p>
+      <div class="grid-2">
+        <div class="stat-card"><div class="num" id="mutCount"></div><div class="label">Mutations found</div></div>
+        <div class="stat-card"><div class="num" id="mutCodes"></div><div class="label">Mutation codes</div></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">DRUG RESISTANCE PROFILE</p>
+      <div id="resultCards"></div>
+    </section>
+
+    <section>
+      <p class="section-label">STRUCTURAL VISUALIZATION</p>
+      <p>Click a highlighted residue to see its role.</p>
+      <select id="geneSelect"></select>
+      <div id="viewer" style="width:800px; height:500px; position:relative; border:1px solid #E4E8EC;"></div>
+      <p class="legend">
+        <b>Legend</b> — Blue: active/binding site residue. Red: mutation found in this patient's sequence.
+        A red mutation near or inside the blue region directly interferes with drug binding.
+      </p>
+    </section>
+
+    <section>
+      <p class="section-label">CLINICAL SUMMARY</p>
+      <div class="patient-banner" id="clinicalSummary"></div>
+    </section>
+
+  </div>
+
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

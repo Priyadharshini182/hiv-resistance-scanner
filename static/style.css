@@ -1,0 +1,172 @@
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: #FAFBFC;
+    margin: 0;
+    color: #1C2B3A;
+}
+
+.lab-header {
+    background: #1C2B3A;
+    padding: 2.2rem 3rem;
+    border-bottom: 3px solid #3D6B8C;
+}
+
+.lab-header h1 {
+    color: #fff;
+    margin: 0 0 0.3rem 0;
+    font-size: 1.8rem;
+}
+
+.lab-header p {
+    color: #A8B8C6;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-bottom: 2px solid #E4E8EC;
+    padding-bottom: 0.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    margin: 0.6rem 0 0.2rem;
+    color: #5B6B79;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #D2D9E0;
+    border-radius: 4px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+textarea {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.55rem 1.4rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #1C2B3A;
+    color: white;
+    margin-left: 0.6rem;
+}
+
+.btn-primary:hover {
+    background: #3D6B8C;
+}
+
+.btn-secondary {
+    background: #EEF2F5;
+    color: #1C2B3A;
+}
+
+.patient-banner {
+    background: #EEF2F5;
+    border: 1px solid #D2D9E0;
+    border-radius: 4px;
+    padding: 0.9rem 1.3rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #E4E8EC;
+    border-radius: 4px;
+    padding: 1.1rem;
+    text-align: center;
+}
+
+.stat-card .num {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.stat-card .label {
+    font-size: 0.78rem;
+    color: #6B7A87;
+    margin-top: 0.2rem;
+}
+
+.result-card {
+    background: #fff;
+    border: 1px solid #E4E8EC;
+    border-radius: 4px;
+    padding: 0.9rem 1.3rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resist-pill {
+    display: inline-block;
+    padding: 3px 11px;
+    border-radius: 3px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    font-weight: 500;
+}
+
+.pill-susceptible {
+    background: #E6F0E9;
+    color: #2F6B3F;
+}
+
+.pill-low {
+    background: #FBF2DC;
+    color: #8A6A1F;
+}
+
+.pill-intermediate {
+    background: #FCE9DC;
+    color: #A3521F;
+}
+
+.pill-high {
+    background: #F9DEDD;
+    color: #A32E2E;
+}
+
+.legend {
+    font-size: 0.85rem;
+    color: #5B6B79;
+    margin-top: 0.8rem;
+}
